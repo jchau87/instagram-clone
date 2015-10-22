@@ -19,17 +19,23 @@ class ViewController: UIViewController {
   
   var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
   
+  func displayAlert(title: String, message: String) {
+    
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+    
+    alert.addAction(UIAlertAction(title: "ok", style: .Default, handler: { (action) -> Void in
+      self.dismissViewControllerAnimated(true, completion: nil)
+    }))
+    
+    self.presentViewController(alert, animated: true, completion: nil)
+    
+  }
+  
   @IBAction func signUp(sender: AnyObject) {
     
     if username.text == "" || password.text == "" {
-      let alert = UIAlertController(title: "Error in form", message: "Please enter a username and password",
-        preferredStyle: UIAlertControllerStyle.Alert)
       
-      alert.addAction(UIAlertAction(title: "ok", style: .Default, handler: { (action) -> Void in
-        self.dismissViewControllerAnimated(true, completion: nil)
-      }))
-      
-      self.presentViewController(alert, animated: true, completion: nil)
+      displayAlert("Error in form", message: "Please enter a username and password")
       
     } else {
       
@@ -40,6 +46,33 @@ class ViewController: UIViewController {
       view.addSubview(activityIndicator)
       activityIndicator.startAnimating()
       UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+      
+      let user = PFUser()
+      user.username = username.text
+      user.password = password.text
+      
+      var errorMessage = "Please try again later"
+      user.signUpInBackgroundWithBlock({ (success, error) -> Void in
+        
+        self.activityIndicator.stopAnimating()
+        UIApplication.sharedApplication().endIgnoringInteractionEvents()
+        
+        if error == nil {
+          // signup successful
+        } else {
+          
+          if let errorString = error!.userInfo["error"] as? String {
+            
+            errorMessage = errorString
+            
+          }
+          
+          self.displayAlert("Failed Signup", message: errorMessage)
+        }
+        
+        
+        
+      })
     }
     
   }
