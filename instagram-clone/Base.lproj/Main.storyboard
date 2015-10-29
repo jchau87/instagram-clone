@@ -92,7 +92,7 @@
             </objects>
             <point key="canvasLocation" x="424.5" y="367.5"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Users-->
         <scene sceneID="2hH-p3-UDj">
             <objects>
                 <tableViewController id="4bV-Xq-G5R" customClass="TableViewController" customModule="instagram_clone" customModuleProvider="target" sceneMemberID="viewController">
@@ -118,11 +118,69 @@
                             <outlet property="delegate" destination="4bV-Xq-G5R" id="aDM-hN-f4S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="yVv-Z6-QGY"/>
+                    <navigationItem key="navigationItem" title="Users" id="yVv-Z6-QGY">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="2LQ-oW-lYd">
+                            <connections>
+                                <segue destination="5wH-Lc-LmP" kind="show" id="nRC-fU-Xt4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAh-wV-rn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584.5" y="367.5"/>
+            <point key="canvasLocation" x="1308.5" y="367.5"/>
+        </scene>
+        <!--Post Image View Controller-->
+        <scene sceneID="dCv-od-i4I">
+            <objects>
+                <viewController id="5wH-Lc-LmP" customClass="PostImageViewController" customModule="instagram_clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0RF-c5-m5a"/>
+                        <viewControllerLayoutGuide type="bottom" id="YYI-JZ-8WM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JDO-oe-CgR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSw-tQ-p4b" userLabel="message">
+                                <rect key="frame" x="20" y="429" width="335" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esi-op-eKd">
+                                <rect key="frame" x="149" y="486" width="77" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Post Image"/>
+                                <connections>
+                                    <action selector="postImage:" destination="5wH-Lc-LmP" eventType="touchUpInside" id="NSl-gT-z5m"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uJY-Mc-3ea">
+                                <rect key="frame" x="20" y="20" width="335" height="347"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLP-i1-AF0">
+                                <rect key="frame" x="127" y="386" width="121" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Choose An Image"/>
+                                <connections>
+                                    <action selector="chooseAnImage:" destination="5wH-Lc-LmP" eventType="touchUpInside" id="Jwb-lI-rzO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageToPost" destination="uJY-Mc-3ea" id="a7w-eK-n2X"/>
+                        <outlet property="message" destination="pSw-tQ-p4b" id="tCj-A4-wqH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6s1-LT-MUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1762.5" y="367.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tic-1p-ZaZ">
@@ -139,7 +197,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEO-V9-vRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968.5" y="367.5"/>
+            <point key="canvasLocation" x="856.5" y="367.5"/>
         </scene>
     </scenes>
 </document>

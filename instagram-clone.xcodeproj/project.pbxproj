@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882642AE1BE1E3E9000759D7 /* PostImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882642AD1BE1E3E9000759D7 /* PostImageViewController.swift */; };
 		882ACA111BDC4ED40000FA3E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882ACA101BDC4ED40000FA3E /* TableViewController.swift */; };
 		88931C1D1BD5F80100A739C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88931C1C1BD5F80100A739C7 /* AppDelegate.swift */; };
 		88931C1F1BD5F80100A739C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88931C1E1BD5F80100A739C7 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		3D41D4DAD2EEF722276A47D3 /* Pods-instagram-clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram-clone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instagram-clone/Pods-instagram-clone.debug.xcconfig"; sourceTree = "<group>"; };
+		882642AD1BE1E3E9000759D7 /* PostImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageViewController.swift; sourceTree = "<group>"; };
 		882ACA101BDC4ED40000FA3E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		88931C191BD5F80100A739C7 /* instagram-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "instagram-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88931C1C1BD5F80100A739C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				88931C231BD5F80100A739C7 /* instagram_clone.xcdatamodeld */,
 				88931C4D1BD8C12700A739C7 /* secrets.swift */,
 				882ACA101BDC4ED40000FA3E /* TableViewController.swift */,
+				882642AD1BE1E3E9000759D7 /* PostImageViewController.swift */,
 			);
 			path = "instagram-clone";
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			files = (
 				88931C1F1BD5F80100A739C7 /* ViewController.swift in Sources */,
 				88931C4E1BD8C12700A739C7 /* secrets.swift in Sources */,
+				882642AE1BE1E3E9000759D7 /* PostImageViewController.swift in Sources */,
 				88931C1D1BD5F80100A739C7 /* AppDelegate.swift in Sources */,
 				882ACA111BDC4ED40000FA3E /* TableViewController.swift in Sources */,
 				88931C251BD5F80100A739C7 /* instagram_clone.xcdatamodeld in Sources */,
