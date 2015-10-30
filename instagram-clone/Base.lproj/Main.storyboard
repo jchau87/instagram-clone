@@ -92,6 +92,63 @@
             </objects>
             <point key="canvasLocation" x="424.5" y="367.5"/>
         </scene>
+        <!--Feed Table View Controller-->
+        <scene sceneID="r9d-SU-hQL">
+            <objects>
+                <tableViewController id="2qs-oh-BVA" customClass="FeedTableViewController" customModule="instagram_clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="354" sectionHeaderHeight="28" sectionFooterHeight="28" id="t9G-lR-TRd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="354" id="nid-C0-NqT" customClass="TableViewCell" customModule="instagram_clone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="354"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nid-C0-NqT" id="hd6-Lo-Wvp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="354"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M8t-d5-8Ih">
+                                            <rect key="frame" x="8" y="49" width="359" height="218"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7e-U4-BVB">
+                                            <rect key="frame" x="8" y="13" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hch-FA-01e">
+                                            <rect key="frame" x="166" y="281" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="message" destination="Hch-FA-01e" id="ULa-cV-ath"/>
+                                    <outlet property="postedImage" destination="M8t-d5-8Ih" id="QKE-zD-g6q"/>
+                                    <outlet property="username" destination="T7e-U4-BVB" id="w1k-WV-10Z"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2qs-oh-BVA" id="KQ9-wU-kPf"/>
+                            <outlet property="delegate" destination="2qs-oh-BVA" id="hzw-jS-kTT"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lNF-oK-iDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1762.5" y="-380.5"/>
+        </scene>
         <!--Users-->
         <scene sceneID="2hH-p3-UDj">
             <objects>
@@ -119,6 +176,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Users" id="yVv-Z6-QGY">
+                        <barButtonItem key="leftBarButtonItem" title="Feed" id="ErS-Mm-Hk3">
+                            <connections>
+                                <segue destination="2qs-oh-BVA" kind="showDetail" id="bmK-dB-o1U"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="2LQ-oW-lYd">
                             <connections>
                                 <segue destination="5wH-Lc-LmP" kind="show" id="nRC-fU-Xt4"/>
